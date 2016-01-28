@@ -26,8 +26,11 @@
 #include <time.h>
 #include "libptp-endian.h"
 
-/* PTP datalayer byteorder */
+#ifdef __cplusplus
+extern "C" {
+#endif
 
+/* PTP datalayer byteorder */
 #define PTP_DL_BE			0xF0
 #define	PTP_DL_LE			0x0F
 
@@ -906,6 +909,10 @@ const char * ptp_prop_tostr	(PTPParams* params, PTPDevicePropDesc *dpd,
 uint16_t ptp_prop_getcodebyname	(PTPParams* params, char* propname);
 const char* ptp_prop_getvalbyname
 				(PTPParams* params, char* name, uint16_t dpc);
+
+#ifdef __cplusplus
+}
+#endif
 
 
 #endif /* __PTP_H__ */
